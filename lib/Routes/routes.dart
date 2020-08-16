@@ -2,12 +2,15 @@ import 'package:flutter/material.dart';
 
 import '../Tabs//home.dart';
 import '../Tabs/Tabs.dart';
+import '../Pages/LRPage/register.dart';
+import '../Pages/LRPage/registersecond.dart';
 
 final routeContainer = {
-   '/':(context) => TabPage(),
-   '/home': (context) => HomePage()
+  '/': (context) => TabPage(),
+  '/home': (context) => HomePage(),
+  '/register': (context) => RegisterFirst(),
+  '/registersecond': (context) => RegisterSecondPage()
 };
-
 
 //固定写法
 var onGenerateRoute = (RouteSettings settings) {

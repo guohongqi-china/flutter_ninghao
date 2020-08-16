@@ -8,13 +8,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-       theme: ThemeData(
-         primaryColor: Colors.yellow
-       ),
-      //  home: TabPage(),
-       initialRoute: '/',
-       routes: routeContainer,
-       onGenerateRoute: onGenerateRoute
-    );
+        theme: ThemeData(primaryColor: Colors.yellow),
+        //  home: TabPage(),
+        initialRoute: '/',
+        routes: routeContainer,
+        onGenerateRoute: onGenerateRoute);
   }
 }
