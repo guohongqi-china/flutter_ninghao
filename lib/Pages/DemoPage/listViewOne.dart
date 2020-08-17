@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
 // import '../Resources/post.dart';
-import 'listData.dart';
+import '../../Tabs/listData.dart';
 
-class HomePage extends StatelessWidget {
-
-
+class ListViewOnePage extends StatelessWidget {
+  
   final _cardColor = Color.fromRGBO(240, 240, 240, 1);
 
   //自定义方法

@@ -66,7 +66,9 @@ class _RegisterSecondPageState extends State<RegisterSecondPage> {
                     height: 40.0,
                     padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
                     child: RaisedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                         startTimer();
+                      },
                       child: Text(_start != _count ? "$_start S" : "重新发送"),
                     ),
                   )),

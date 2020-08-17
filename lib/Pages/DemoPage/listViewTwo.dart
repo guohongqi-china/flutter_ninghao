@@ -1,68 +1,81 @@
 import 'package:flutter/material.dart';
-import 'package:dio/dio.dart';
-// import '../Resources/post.dart';
-import 'listData.dart';
+import '../../Tabs/listData.dart';
 
-class HomePage extends StatelessWidget {
-
-
+class ListViewTwoPage extends StatelessWidget {
+  
   final _cardColor = Color.fromRGBO(240, 240, 240, 1);
+  
 
-  //自定义方法
-  List<Widget> _getData() {
-    var tempList = listData.map((value) {
-      return ListTile(
-          leading: Image.network(value["imageUrl"]),
-          title: Text(value["title"]),
-          subtitle: Text(value["author"]));
-    });
-    // ('124124','124214')
-    return tempList.toList();
-  }
-  List<Widget> _getLocalData() {
-    var templist = listData.map((value) {
-      var imgWidget = Image.network(
-        value["imageUrl"],
-        fit: BoxFit.cover,
-      );
-      var titleWidget = Center(
-        child: Text(value['title'], style: TextStyle(fontSize: 20.0)),
-      );
-      var subtitleWidget = Center(
-        child: Text(
-          value['author'],
-          style:
-              TextStyle(fontSize: 16.0, color: Color.fromRGBO(54, 54, 54, 1.0)),
-        ),
-      );
-      return Container(
-        padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
-        color: _cardColor,
-        child: Container(
-          color: Colors.white,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              AspectRatio(
-                aspectRatio: 1.6,
-                child: Container(color: Colors.red, child: imgWidget),
+  Widget _getCurrentWidget(context,index){
+
+    // return Container(
+    //   margin: EdgeInsets.all(10),
+    //   height: 200.0,
+    //   child: Text("data"),
+    //   decoration: BoxDecoration(
+    //     image: DecorationImage(
+    //       image: NetworkImage("https://www.itying.com/images/flutter/2.png"),
+    //       fit: BoxFit.cover
+    //     ),
+    //     borderRadius: BorderRadius.all(
+    //       Radius.circular(10)
+    //     )
+    //   ),
+    // );
+  
+
+    return Card(
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadiusDirectional.circular(20)),
+            clipBehavior: Clip.antiAlias,
+            child:Container(
+              height: 150,
+              width: double.infinity,
+              color: Colors.red,
+              child: Stack(
+                children: <Widget>[
+                  Container(
+                     width: double.infinity,
+                     child: Image.network("https://www.itying.com/images/flutter/2.png",fit:BoxFit.cover),
+
+                  ),
+                  Align(
+                    alignment: Alignment.topCenter,
+                    child: Text("12312312312"),
+                  ),
+                  Align(
+                    alignment: Alignment.center,
+                    child: Text("555555555555555"),
+                  ),
+                  Align(
+                    alignment: Alignment.bottomRight,
+                    child: Icon(Icons.search, size: 40, color: Colors.white),
+                  ),
+                ],
               ),
-              ListTile(title: titleWidget, subtitle: subtitleWidget),
-            ],
-          ),
-        ),
-      );
-    });
-    return templist.toList();
+            )
+          );
+    
+    // return Container(
+    //   color: Colors.red,
+    //   child: Card(
+    //    borderOnForeground:true,
+    //    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+    //    child: Image.network("https://www.itying.com/images/flutter/2.png",)
+    //   ),
+    // );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("首页"),
+        title: Text("卡片列表"),
       ),
-      body: ListView(children: this._getLocalData()),
+      body: ListView.builder(
+        itemBuilder: _getCurrentWidget,
+        itemCount: listData.length,
+      )
     );
   }
 

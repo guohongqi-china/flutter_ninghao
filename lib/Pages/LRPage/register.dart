@@ -74,7 +74,7 @@ class _RegisterFirstState extends State<RegisterFirst> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Expanded(flex: 1, child: _drowPhone()),
+                    Expanded(flex: 1, child: Container(padding: EdgeInsets.fromLTRB(10, 0, 10, 0),child: _drowPhone(),)),
                     Expanded(
                       flex: 3,
                       child: TextField(

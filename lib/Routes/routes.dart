@@ -4,12 +4,28 @@ import '../Tabs//home.dart';
 import '../Tabs/Tabs.dart';
 import '../Pages/LRPage/register.dart';
 import '../Pages/LRPage/registersecond.dart';
+import '../Tabs/shopCar.dart';
+import '../Tabs/memberManager.dart';
+import '../Tabs/listDemo.dart';
+import '../Pages/DemoPage/listViewOne.dart';
+import '../Pages/DemoPage/listViewTwo.dart';
+import '../Pages/DemoPage/card_demo.dart';
+
+
 
 final routeContainer = {
   '/': (context) => TabPage(),
   '/home': (context) => HomePage(),
   '/register': (context) => RegisterFirst(),
-  '/registersecond': (context) => RegisterSecondPage()
+  '/registersecond': (context) => RegisterSecondPage(),
+  '/shopcar': (context) => ShopCarPage(),
+  '/member': (context) => MemberManagerPage(),
+  '/listdemo': (context) => ListPage(),
+  '/listone': (context) => ListViewOnePage(),
+  '/listtwo': (context) => ListViewTwoPage(),
+  '/listcard': (context) => CardDemo(),
+
+  
 };
 
 //固定写法
