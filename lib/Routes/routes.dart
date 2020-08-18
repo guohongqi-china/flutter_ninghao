@@ -10,7 +10,7 @@ import '../Tabs/listDemo.dart';
 import '../Pages/DemoPage/listViewOne.dart';
 import '../Pages/DemoPage/listViewTwo.dart';
 import '../Pages/DemoPage/card_demo.dart';
-
+import '../Pages//DemoPage/network.dart';
 
 
 final routeContainer = {
@@ -24,6 +24,8 @@ final routeContainer = {
   '/listone': (context) => ListViewOnePage(),
   '/listtwo': (context) => ListViewTwoPage(),
   '/listcard': (context) => CardDemo(),
+  '/network': (context) => NetworkPage(),
+
 
   
 };
