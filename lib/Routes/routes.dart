@@ -11,7 +11,10 @@ import '../Pages/DemoPage/listViewOne.dart';
 import '../Pages/DemoPage/listViewTwo.dart';
 import '../Pages/DemoPage/card_demo.dart';
 import '../Pages//DemoPage/network.dart';
-
+import '../Pages/DemoPage/tableView.dart';
+import '../Pages/DemoPage/fpsList.dart';
+import '../Pages/DemoPage/imageLayout.dart';
+import '../Pages/DemoPage/gridview.dart';
 
 final routeContainer = {
   '/': (context) => TabPage(),
@@ -25,9 +28,10 @@ final routeContainer = {
   '/listtwo': (context) => ListViewTwoPage(),
   '/listcard': (context) => CardDemo(),
   '/network': (context) => NetworkPage(),
-
-
-  
+  '/tableview': (context) => TableViewPage(),
+  '/fpspage': (context) => FPSListPage(),
+  '/imagelayout': (context) => ImageLayoutPage(),
+  '/gridview': (context) => GridViewPage()
 };
 
 //固定写法

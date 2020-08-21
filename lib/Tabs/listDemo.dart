@@ -3,39 +3,38 @@ import '../Pages/DemoPage/requestManager.dart';
 import 'dart:convert';
 import 'package:dio/dio.dart';
 
-
 class ListPage extends StatelessWidget {
-  
-  void _getRequestFuncation() async{
-
-   print("object");
+  void _getRequestFuncation() async {
+    print("object");
     // Dio dio = Dio();
     // String url = "http://127.0.0.1:8000/listData/count";
     FormData formData = FormData.fromMap({"name": "张三", "age": 22});
+
     ///发起 post 请求 如这里的注册用户信息
-  //   Response response = await dio.post(url, data: formData);
-  //   String result = response.data.toString();
-  //   print(result);
-  //   setState(() {
-  //     loadingState = false;
-  //  });
+    //   Response response = await dio.post(url, data: formData);
+    //   String result = response.data.toString();
+    //   print(result);
+    //   setState(() {
+    //     loadingState = false;
+    //  });
 
-   RequestManager.request(Method.POST, "http://127.0.0.1:8000/listData/count", formData,success: (data)=>{
-          print("$data"),
-          // this.listData = json.decode(data),
-          // this.str = listData['data']['name'],
-          // print(this.listData),
-          // setState(() {
-          //     loadingState = false;
-          // })
-   },fail: (code,message)=>{
-    // setState(() {
-    //   loadingState = false;
-    //  })
-   });
-
- }
-
+    RequestManager.request(
+        Method.POST, "http://127.0.0.1:8000/listData/count", {"age": 22},
+        success: (data) => {
+              print("$data"),
+              // this.listData = json.decode(data),
+              // this.str = listData['data']['name'],
+              // print(this.listData),
+              // setState(() {
+              //     loadingState = false;
+              // })
+            },
+        fail: (code, message) => {
+              // setState(() {
+              //   loadingState = false;
+              //  })
+            });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -67,19 +66,53 @@ class ListPage extends StatelessWidget {
             marginTop: 20.0,
           ),
           demoItem(
-            "网络请求",
+            "Post请求",
             () {
               _getRequestFuncation();
               // Navigator.pushNamed(context, "/network");
             },
             marginTop: 20.0,
-          )
+          ),
+          demoItem(
+            "网络请求",
+            () {
+              Navigator.pushNamed(context, "/network");
+            },
+            marginTop: 20.0,
+          ),
+          demoItem(
+            "上拉刷新下拉加载",
+            () {
+              Navigator.pushNamed(context, "/tableview");
+            },
+            marginTop: 20.0,
+          ),
+          demoItem(
+            "FPS优化",
+            () {
+              Navigator.pushNamed(context, "/fpspage");
+            },
+            marginTop: 20.0,
+          ),
+          demoItem(
+            "9宫格布局对4处理",
+            () {
+              Navigator.pushNamed(context, "/imagelayout");
+            },
+            marginTop: 20.0,
+          ),
+          demoItem(
+            "GridView",
+            () {
+              Navigator.pushNamed(context, "/gridview");
+            },
+            marginTop: 20.0,
+          ),
         ],
       ),
     );
   }
 }
-
 
 class demoItem extends StatelessWidget {
   final marginTop;
