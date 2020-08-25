@@ -31,6 +31,9 @@ dependencies:
   dio: ^3.0.0
   # 监测网络状态 https://pub.dev/packages/connectivity
   connectivity: ^0.4.9
+  flutter_html: ^1.0.2
+  webview_flutter: ^0.3.22+1
+
 
 dev_dependencies:
   flutter_test:

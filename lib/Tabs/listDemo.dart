@@ -108,6 +108,29 @@ class ListPage extends StatelessWidget {
             },
             marginTop: 20.0,
           ),
+          demoItem(
+            "新闻列表",
+            () {
+              Navigator.pushNamed(context, "/neewlist",
+                  arguments: {'1': '2222'});
+            },
+            marginTop: 20.0,
+          ),
+          demoItem(
+            "传参",
+            () {
+              Navigator.pushNamed(context, '/productinfo',
+                  arguments: {"pid": '12312432'});
+            },
+            marginTop: 20.0,
+          ),
+          demoItem(
+            "flutter 与 原生交互",
+            () {
+              Navigator.pushNamed(context, '/native');
+            },
+            marginTop: 20.0,
+          ),
         ],
       ),
     );
